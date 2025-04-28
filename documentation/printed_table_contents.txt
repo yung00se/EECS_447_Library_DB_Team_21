@@ -1,0 +1,340 @@
+Media
++----------+---------------------------------------+------------------+---------------+------------+
+| media_id | title                                 | publication_date | media_type    | genre      |
++----------+---------------------------------------+------------------+---------------+------------+
+|     1094 | The Alchemist                         | 1988-05-25       | Book          | Adventure  |
+|     1095 | Harry Potter and the Sorcerer's Stone | 1997-06-26       | Book          | Fantasy    |
+|     1096 | 1984                                  | 1949-06-08       | Book          | Dystopian  |
+|     1097 | The Great Gatsby                      | 1925-04-10       | Book          | Classic    |
+|     1098 | Pride and Prejudice                   | 1925-04-11       | Book          | Romance    |
+|     1099 | The Hobbit                            | 1937-09-21       | Book          | Fantasy    |
+|     1100 | The Catcher in the Rye                | 1951-07-16       | Book          | Classic    |
+|     1101 | The Odyssey                           | 1927-04-10       | Book          | Classic    |
+|     1102 | Fahrenheit 451                        | 1953-10-19       | Book          | Dystopian  |
+|     1103 | Moby Dick                             | 1851-10-18       | Book          | Adventure  |
+|     1104 | The Scarlet Letter                    | 1850-03-16       | Book          | Classic    |
+|     1105 | The Matrix Unfolded                   | 2021-12-10       | Book          | Film       |
+|     1106 | The Social Network                    | 2010-10-01       | Book          | Film       |
+|     1107 | Digital Transformation in Business    | 2023-05-01       | Book          | Business   |
+|     1108 | The Future of Work                    | 2023-11-01       | Book          | Business   |
+|     1109 | Deep Learning                         | 2022-06-14       | Book          | Science    |
+|     1110 | Cybersecurity in the Modern Age       | 2021-11-15       | Book          | Technology |
+|     1111 | Blockchain Revolution                 | 2023-08-20       | Book          | Business   |
+|     1112 | Business Weekly                       | 2024-03-30       | Book          | Business   |
+|     1113 | How AI Will Change the World          | 2023-09-22       | Book          | Technology |
+|     1114 | The Social Network                    | 2010-10-01       | Book          | Film       |
+|     1115 | The Hobbit                            | 1937-09-21       | Book          | Fantasy    |
+|     1116 | Scientific American                   | 2024-04-05       | Book          | Science    |
+|     1117 | Vogue                                 | 2024-03-15       | Book          | Fashion    |
+|     1118 | Time Magazine                         | 2024-01-15       | Book          | News       |
+|     1119 | The Economist                         | 2024-04-10       | Book          | Economy    |
+|     1120 | Wired                                 | 2024-01-20       | Book          | Tech       |
+|     1121 | National Geographic                   | 2024-02-01       | Book          | Nature     |
+|     1122 | Rolling Stone                         | 2024-02-25       | Book          | Music      |
+|     1123 | Pride and Prejudice                   | 1813-01-28       | Book          | Romance    |
+|     1124 | Vogue                                 | 2024-03-15       | Magazine      | Fashion    |
+|     1125 | Forbes                                | 2024-03-05       | Magazine      | Business   |
+|     1126 | TIME Health                           | 2024-01-10       | Magazine      | Health     |
+|     1127 | Scientific American                   | 2024-04-05       | Magazine      | Science    |
+|     1128 | Business Weekly                       | 2024-03-30       | Magazine      | Business   |
+|     1129 | Vogue                                 | 2024-03-15       | Magazine      | Fashion    |
+|     1130 | TIME Magazine                         | 2024-01-15       | Magazine      | News       |
+|     1131 | The Economist                         | 2024-04-10       | Magazine      | Economy    |
+|     1132 | Wired                                 | 2024-01-20       | Magazine      | Tech       |
+|     1133 | National Geographic                   | 2024-02-01       | Magazine      | Nature     |
+|     1134 | Rolling Stone                         | 2024-02-25       | Magazine      | Music      |
+|     1135 | Harvard Business Review               | 2024-04-10       | Magazine      | Business   |
+|     1136 | The New Yorker                        | 2024-01-25       | Magazine      | Culture    |
+|     1137 | TIME                                  | 2024-04-15       | Magazine      | News       |
+|     1138 | Elle                                  | 2024-03-12       | Magazine      | Fashion    |
+|     1139 | The Guardian                          | 2024-04-20       | Magazine      | News       |
+|     1140 | Popular Science                       | 2024-02-01       | Magazine      | Science    |
+|     1141 | MIT Technology Review                 | 2024-04-10       | Magazine      | Technology |
+|     1142 | USA Today                             | 2024-04-02       | Magazine      | News       |
+|     1143 | Scientific American                   | 2024-04-05       | Magazine      | Science    |
+|     1144 | The Social Network                    | 2020-01-10       | Digital Media | Technology |
+|     1145 | VR Explained                          | 2023-10-15       | Digital Media | Technology |
+|     1146 | The Future of AI                      | 2023-05-01       | Digital Media | Technology |
+|     1147 | Digital Transformation                | 2022-02-15       | Digital Media | Business   |
+|     1148 | Tech Innovations                      | 2025-04-01       | Digital Media | Technology |
+|     1149 | Deep Learning                         | 2022-06-14       | Digital Media | Science    |
+|     1150 | Cybersecurity                         | 2021-11-15       | Digital Media | Technology |
+|     1151 | How AI Will Change the World          | 2023-09-22       | Digital Media | Technology |
+|     1152 | Time for Business                     | 2024-04-02       | Digital Media | Business   |
+|     1153 | The Digital Age                       | 2023-08-01       | Digital Media | Technology |
+|     1154 | Future of Work                        | 2024-01-15       | Digital Media | Business   |
+|     1155 | Technology Reimagined                 | 2023-05-01       | Digital Media | Business   |
+|     1156 | Music Innovations                     | 2022-04-10       | Digital Media | Music      |
+|     1157 | Future of AI                          | 2023-07-20       | Digital Media | Technology |
+|     1158 | Big Data Revolution                   | 2023-12-05       | Digital Media | Technology |
++----------+---------------------------------------+------------------+---------------+------------+
+
+
+Book
++---------+---------------------+---------------+
+| book_id | author              | ISBN          |
++---------+---------------------+---------------+
+|    1094 | Paulo Coelho        | 9780061122415 |
+|    1095 | J.K. Rowling        | 9780747532699 |
+|    1096 | George Orwell       | 9780451524935 |
+|    1097 | F. Scott Fitzgerald | 9780743273565 |
+|    1098 | Jane Austen         | 9780141439518 |
+|    1099 | J.R.R. Tolkien      | 9780618260300 |
+|    1100 | J.D. Salinger       | 9780316769488 |
+|    1101 | Homer               | 9780143039952 |
+|    1102 | Ray Bradbury        | 9781451673319 |
+|    1103 | Herman Melville     | 9781503280786 |
+|    1104 | Mark Twain          | 9780141439600 |
+|    1105 | Leo Tolstoy         | 9780143039990 |
+|    1106 | Charles Dickens     | 9781503215154 |
+|    1107 | Victor Hugo         | 9780451419439 |
+|    1108 | Harper Lee          | 9780061120084 |
+|    1109 | William Shakespeare | 9780743477123 |
+|    1110 | Emily Brontë        | 9781853260018 |
+|    1111 | Friedrich Nietzsche | 9780140441185 |
+|    1112 | Isaac Asimov        | 9780553382563 |
+|    1113 | C.S. Lewis          | 9780064471190 |
+|    1114 | Jules Verne         | 9781512093724 |
+|    1115 | Kurt Vonnegut       | 9780440180296 |
+|    1116 | Franz Kafka         | 9780553204365 |
+|    1117 | Aldous Huxley       | 9780060850521 |
+|    1118 | Arthur C. Clarke    | 9780451457995 |
+|    1119 | Margaret Atwood     | 9780385490818 |
+|    1120 | Gillian Flynn       | 9780307588371 |
+|    1121 | George R. R. Martin | 9780553103540 |
+|    1122 | Stephen King        | 9781501146340 |
+|    1123 | Dan Brown           | 9780307474278 |
++---------+---------------------+---------------+
+
+Digital_Media
++-----------+-----------------+
+| dmedia_id | creator         |
++-----------+-----------------+
+|      1144 | Mark Zuckerberg |
+|      1145 | Elon Musk       |
+|      1146 | Jeff Bezos      |
+|      1147 | Tim Cook        |
+|      1148 | Sundar Pichai   |
+|      1149 | Jack Dorsey     |
+|      1150 | Bill Gates      |
+|      1151 | Satya Nadella   |
+|      1152 | Reed Hastings   |
+|      1153 | Larry Page      |
+|      1154 | Sergey Brin     |
+|      1155 | Brian Chesky    |
+|      1156 | Evan Spiegel    |
+|      1157 | Travis Kalanick |
+|      1158 | Daniel Ek       |
++-----------+-----------------+
+
+Magazine
++-------------+----------------+---------------+----------+
+| magazine_id | author         | ISBN          | Issue_no |
++-------------+----------------+---------------+----------+
+|        1124 | John Doe       | 9781111111111 | 45       |
+|        1125 | Jane Smith     | 9782222222222 | 46       |
+|        1126 | Emily Davis    | 9783333333333 | 47       |
+|        1127 | Chris White    | 9784444444444 | 48       |
+|        1128 | David Black    | 9785555555555 | 49       |
+|        1129 | Sara Green     | 9786666666666 | 50       |
+|        1130 | James Brown    | 9787777777777 | 51       |
+|        1131 | Linda Blue     | 9788888888888 | 52       |
+|        1132 | Michael Red    | 9789999999999 | 53       |
+|        1133 | Sarah Lee      | 9790000000000 | 54       |
+|        1134 | Steven Harris  | 9791111111111 | 55       |
+|        1135 | Jessica Martin | 9792222222222 | 56       |
+|        1136 | Paul Thompson  | 9793333333333 | 57       |
+|        1137 | Rachel King    | 9794444444444 | 58       |
+|        1138 | Daniel Scott   | 9795555555555 | 59       |
+|        1139 | Sophia White   | 9796666666666 | 60       |
+|        1140 | Jacob Brown    | 9797777777777 | 61       |
+|        1141 | Megan Clark    | 9798888888888 | 62       |
+|        1142 | Matthew Allen  | 9799999999999 | 63       |
+|        1143 | Lily Nelson    | 9800000000000 | 64       |
++-------------+----------------+---------------+----------+
+
+Copy
++---------+----------+-----------+-------------+
+| copy_id | media_id | branch_id | status      |
++---------+----------+-----------+-------------+
+|       1 |     1094 |         1 | Available   |
+|       2 |     1094 |         3 | Reserved    |
+|       3 |     1095 |         2 | Available   |
+|       4 |     1095 |         5 | Available   |
+|       5 |     1095 |         1 | Unavailable |
+|       6 |     1096 |         3 | Available   |
+|       7 |     1097 |         2 | Reserved    |
+|       8 |     1097 |         5 | Unavailable |
+|       9 |     1098 |         1 | Available   |
+|      10 |     1098 |         4 | Available   |
+|      11 |     1098 |         5 | Available   |
+|      12 |     1099 |         2 | Reserved    |
+|      13 |     1099 |         3 | Available   |
+|      14 |     1100 |         1 | Unavailable |
+|      15 |     1100 |         5 | Available   |
+|      16 |     1100 |         3 | Reserved    |
+|      17 |     1101 |         2 | Available   |
+|      18 |     1101 |         4 | Unavailable |
+|      19 |     1102 |         5 | Available   |
+|      20 |     1103 |         1 | Available   |
+|      21 |     1104 |         3 | Reserved    |
+|      22 |     1104 |         4 | Available   |
+|      23 |     1124 |         1 | Available   |
+|      24 |     1125 |         5 | Reserved    |
+|      25 |     1134 |         3 | Unavailable |
+|      26 |     1127 |         2 | Available   |
+|      27 |     1128 |         5 | Available   |
+|      28 |     1151 |         1 | Available   |
+|      29 |     1105 |         3 | Available   |
+|      30 |     1145 |         3 | Available   |
+|      31 |     1157 |         4 | Reserved    |
+|      32 |     1144 |         4 | Reserved    |
+|      33 |     1139 |         4 | Available   |
+|      34 |     1121 |         5 | Available   |
+|      37 |     1133 |         4 | Unavailable |
++---------+----------+-----------+-------------+
+
+Branch
++-----------+-------------------+----------------+------------------+
+| branch_id | name              | address        | year_established |
++-----------+-------------------+----------------+------------------+
+|         1 | Downtown Library  | 123 Main St    |             1985 |
+|         2 | Westside Branch   | 456 Oak St     |             1992 |
+|         3 | Eastside Branch   | 789 Pine Ave   |             2001 |
+|         4 | Northside Library | 321 Birch Blvd |             1978 |
+|         5 | Southside Branch  | 654 Cedar Ave  |             2010 |
++-----------+-------------------+----------------+------------------+
+
+Client
++-----------+------------+-----------+-----------------------+--------------+-------------------+------------+--------+-----------+-----------+
+| client_id | first_name | last_name | email                 | phone_number | address           | membership | active | max_books | fines_due |
++-----------+------------+-----------+-----------------------+--------------+-------------------+------------+--------+-----------+-----------+
+|     10000 | Alice      | Smith     | alice@example.com     | 555-0101     | 123 Maple St      | Standard   |      1 |        10 |      0.00 |
+|     10001 | Bob        | Johnson   | bob.j@example.com     | 555-0102     | 456 Oak St        | Student    |      1 |        20 |      1.50 |
+|     10002 | Carol      | Williams  | carol.w@example.com   | 555-0103     | 789 Pine St       | Senior     |      0 |        15 |      5.00 |
+|     10003 | David      | Brown     | david.b@example.com   | 555-0104     | 321 Birch St      | Standard   |      1 |        10 |      0.00 |
+|     10004 | Eve        | Jones     | eve.j@example.com     | 555-0105     | 654 Elm St        | Student    |      1 |        20 |      2.25 |
+|     10005 | Frank      | Garcia    | frank.g@example.com   | 555-0106     | 987 Cedar St      | Senior     |      0 |        15 |     10.00 |
+|     10006 | Grace      | Miller    | grace.m@example.com   | 555-0107     | 147 Spruce St     | Standard   |      1 |        10 |      0.75 |
+|     10007 | Henry      | Davis     | henry.d@example.com   | 555-0108     | 258 Willow St     | Student    |      1 |        20 |      0.00 |
+|     10008 | Ivy        | Rodriguez | ivy.r@example.com     | 555-0109     | 369 Aspen St      | Senior     |      1 |        15 |      1.00 |
+|     10009 | Jack       | Martinez  | jack.m@example.com    | 555-0110     | 159 Hemlock St    | Standard   |      0 |        10 |      0.00 |
+|     10010 | Kate       | Hernandez | kate.h@example.com    | 555-0111     | 753 Hickory St    | Student    |      1 |        20 |      0.00 |
+|     10011 | Leo        | Lopez     | leo.l@example.com     | 555-0112     | 852 Walnut St     | Senior     |      0 |        15 |      3.50 |
+|     10012 | Mia        | Gonzalez  | mia.g@example.com     | 555-0113     | 951 Chestnut St   | Standard   |      1 |        10 |      0.00 |
+|     10013 | Nina       | Wilson    | nina.w@example.com    | 555-0114     | 159 Maple Ave     | Student    |      1 |        20 |      0.00 |
+|     10014 | Oscar      | Anderson  | oscar.a@example.com   | 555-0115     | 753 Oak Ave       | Senior     |      1 |        15 |      1.25 |
+|     10015 | Paul       | Thomas    | paul.t@example.com    | 555-0116     | 456 Pine Ave      | Standard   |      1 |        10 |      0.00 |
+|     10016 | Quinn      | Taylor    | quinn.t@example.com   | 555-0117     | 123 Birch Ave     | Student    |      0 |        20 |      7.00 |
+|     10017 | Rachel     | Moore     | rachel.m@example.com  | 555-0118     | 789 Elm Ave       | Senior     |      1 |        15 |      0.00 |
+|     10018 | Steve      | Jackson   | steve.j@example.com   | 555-0119     | 654 Cedar Ave     | Standard   |      1 |        10 |      2.75 |
+|     10019 | Tina       | Martin    | tina.m@example.com    | 555-0120     | 987 Spruce Ave    | Student    |      1 |        20 |      0.00 |
+|     10020 | Uma        | Lee       | uma.l@example.com     | 555-0121     | 147 Willow Ave    | Senior     |      1 |        15 |      0.50 |
+|     10021 | Victor     | Perez     | victor.p@example.com  | 555-0122     | 258 Aspen Ave     | Standard   |      0 |        10 |      0.00 |
+|     10022 | Wendy      | White     | wendy.w@example.com   | 555-0123     | 369 Hemlock Ave   | Student    |      1 |        20 |      0.00 |
+|     10023 | Xander     | Harris    | xander.h@example.com  | 555-0124     | 159 Hickory Ave   | Senior     |      1 |        15 |      4.00 |
+|     10024 | Yara       | Sanchez   | yara.s@example.com    | 555-0125     | 753 Walnut Ave    | Standard   |      1 |        10 |      0.00 |
+|     10025 | Zane       | Clark     | zane.c@example.com    | 555-0126     | 852 Chestnut Ave  | Student    |      0 |        20 |      1.75 |
+|     10026 | Ava        | Ramirez   | ava.r@example.com     | 555-0127     | 951 Maple Blvd    | Senior     |      1 |        15 |      0.00 |
+|     10027 | Ben        | Lewis     | ben.l@example.com     | 555-0128     | 123 Oak Blvd      | Standard   |      1 |        10 |      0.25 |
+|     10028 | Cora       | Robinson  | cora.r@example.com    | 555-0129     | 456 Pine Blvd     | Student    |      1 |        20 |      0.00 |
+|     10029 | Derek      | Walker    | derek.w@example.com   | 555-0130     | 789 Birch Blvd    | Senior     |      0 |        15 |      8.00 |
+|     10030 | Ella       | Young     | ella.y@example.com    | 555-0131     | 654 Elm Blvd      | Standard   |      1 |        10 |      0.00 |
+|     10031 | Finn       | Allen     | finn.a@example.com    | 555-0132     | 987 Cedar Blvd    | Student    |      1 |        20 |      0.00 |
+|     10032 | Gina       | King      | gina.k@example.com    | 555-0133     | 147 Spruce Blvd   | Senior     |      1 |        15 |      2.25 |
+|     10033 | Hank       | Scott     | hank.s@example.com    | 555-0134     | 258 Willow Blvd   | Standard   |      0 |        10 |      0.00 |
+|     10034 | Isla       | Green     | isla.g@example.com    | 555-0135     | 369 Aspen Blvd    | Student    |      1 |        20 |      0.00 |
+|     10035 | Jake       | Baker     | jake.b@example.com    | 555-0136     | 159 Hemlock Blvd  | Senior     |      1 |        15 |      1.50 |
+|     10036 | Kara       | Adams     | kara.a@example.com    | 555-0137     | 753 Hickory Blvd  | Standard   |      1 |        10 |      0.00 |
+|     10037 | Liam       | Nelson    | liam.n@example.com    | 555-0138     | 852 Walnut Blvd   | Student    |      0 |        20 |      6.25 |
+|     10038 | Maya       | Carter    | maya.c@example.com    | 555-0139     | 951 Chestnut Blvd | Senior     |      1 |        15 |      0.00 |
+|     10039 | Nolan      | Mitchell  | nolan.m@example.com   | 555-0140     | 123 Maple Dr      | Standard   |      1 |        10 |      0.00 |
+|     10040 | Olga       | Perez     | olga.p@example.com    | 555-0141     | 456 Oak Dr        | Student    |      1 |        20 |      0.00 |
+|     10041 | Peter      | Reed      | peter.r@example.com   | 555-0142     | 789 Pine Dr       | Senior     |      0 |        15 |      3.00 |
+|     10042 | Queenie    | Kelly     | queenie.k@example.com | 555-0143     | 321 Birch Dr      | Standard   |      1 |        10 |      0.00 |
+|     10043 | Ralph      | Cruz      | ralph.c@example.com   | 555-0144     | 654 Elm Dr        | Student    |      1 |        20 |      1.00 |
+|     10044 | Sophie     | Howard    | sophie.h@example.com  | 555-0145     | 987 Cedar Dr      | Senior     |      1 |        15 |      0.00 |
+|     10045 | Tom        | Ward      | tom.w@example.com     | 555-0146     | 147 Spruce Dr     | Standard   |      0 |        10 |      0.00 |
+|     10046 | Ursula     | Gray      | ursula.g@example.com  | 555-0147     | 258 Willow Dr     | Student    |      1 |        20 |      0.50 |
+|     10047 | Vince      | James     | vince.j@example.com   | 555-0148     | 369 Aspen Dr      | Senior     |      1 |        15 |      4.25 |
+|     10048 | Willa      | Watson    | willa.w@example.com   | 555-0149     | 159 Hemlock Dr    | Standard   |      1 |        10 |      0.00 |
+|     10049 | Xena       | Brooks    | xena.b@example.com    | 555-0150     | 753 Hickory Dr    | Student    |      1 |        20 |      0.00 |
++-----------+------------+-----------+-----------------------+--------------+-------------------+------------+--------+-----------+-----------+
+
+Staff
++----------+------------+-----------+--------------------+-----------+
+| staff_id | first_name | last_name | currently_employed | branch_id |
++----------+------------+-----------+--------------------+-----------+
+|       10 | Alicia     | Moore     |                  1 |         1 |
+|       11 | Brandon    | Young     |                  0 |         2 |
+|       12 | Chloe      | Mitchell  |                  1 |         3 |
+|       13 | Derek      | Carter    |                  1 |         4 |
+|       14 | Emily      | Perez     |                  0 |         5 |
+|       15 | Franklin   | Watson    |                  1 |         1 |
+|       16 | Gabriella  | Hughes    |                  1 |         2 |
+|       17 | Harrison   | Flores    |                  0 |         3 |
+|       18 | Isabelle   | Sanders   |                  1 |         4 |
+|       19 | Jackson    | Reed      |                  1 |         5 |
+|       20 | Kaitlyn    | Kelly     |                  1 |         1 |
+|       21 | Logan      | Patterson |                  1 |         2 |
+|       22 | Madeline   | Barnes    |                  0 |         3 |
+|       23 | Nathan     | Bryant    |                  1 |         4 |
+|       24 | Olivia     | Russell   |                  1 |         5 |
+|       25 | Patrick    | Griffin   |                  1 |         1 |
+|       26 | Quinn      | West      |                  1 |         2 |
+|       27 | Rachel     | Chapman   |                  0 |         3 |
+|       28 | Samuel     | Vasquez   |                  1 |         4 |
+|       29 | Tiffany    | Wells     |                  1 |         5 |
++----------+------------+-----------+--------------------+-----------+
+
+Borrow_Transaction
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+| transaction_id | client_id | copy_id | borrow_date | due_date   | return_date | overdue_fine |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+|             21 |     10000 |       1 | 2025-03-01  | 2025-03-15 | 2025-03-14  |        12.50 |
+|             22 |     10001 |       2 | 2025-03-05  | 2025-03-19 | 2025-03-25  |        14.75 |
+|             23 |     10002 |       3 | 2025-03-10  | 2025-03-24 | NULL        |        16.20 |
+|             24 |     10000 |       4 | 2025-03-12  | 2025-03-26 | 2025-03-27  |        18.30 |
+|             25 |     10003 |       5 | 2025-03-15  | 2025-03-29 | 2025-03-28  |        11.00 |
+|             26 |     10004 |       6 | 2025-03-17  | 2025-03-31 | NULL        |        13.40 |
+|             27 |     10001 |       7 | 2025-03-18  | 2025-04-01 | NULL        |        17.85 |
+|             28 |     10005 |       8 | 2025-03-20  | 2025-04-03 | 2025-04-02  |        15.25 |
+|             29 |     10006 |       9 | 2025-03-22  | 2025-04-05 | 2025-04-06  |        19.60 |
+|             30 |     10007 |      10 | 2025-03-24  | 2025-04-07 | NULL        |        16.00 |
+|             31 |     10002 |      11 | 2025-03-25  | 2025-04-08 | NULL        |        17.25 |
+|             32 |     10008 |      12 | 2025-03-26  | 2025-04-09 | 2025-04-09  |        11.50 |
+|             33 |     10009 |      13 | 2025-03-28  | 2025-04-11 | 2025-04-10  |        14.10 |
+|             34 |     10010 |      14 | 2025-03-30  | 2025-04-13 | NULL        |        18.45 |
+|             35 |     10000 |      15 | 2025-04-01  | 2025-04-15 | NULL        |        15.00 |
+|             36 |     10011 |      16 | 2025-04-02  | 2025-04-16 | NULL        |        12.90 |
+|             37 |     10012 |      17 | 2025-04-03  | 2025-04-17 | 2025-04-20  |        17.70 |
+|             38 |     10003 |      18 | 2025-04-04  | 2025-04-18 | 2025-04-18  |        13.20 |
+|             39 |     10013 |      19 | 2025-04-05  | 2025-04-19 | NULL        |        16.55 |
+|             40 |     10014 |      20 | 2025-04-06  | 2025-04-20 | NULL        |        19.80 |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+
+Reservation
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              1 |     10000 |       1 | 2025-04-10       | 2025-04-17 | 2025-04-15  |
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              3 |     10002 |       3 | 2025-04-12       | 2025-04-19 | 2025-04-19  |
+|              4 |     10000 |       4 | 2025-04-13       | 2025-04-20 | NULL        |
+|              5 |     10003 |       5 | 2025-04-14       | 2025-04-21 | 2025-04-20  |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|              7 |     10001 |       7 | 2025-04-16       | 2025-04-23 | 2025-04-23  |
+|              8 |     10005 |       8 | 2025-04-17       | 2025-04-24 | 2025-04-24  |
+|              9 |     10006 |       9 | 2025-04-18       | 2025-04-25 | NULL        |
+|             10 |     10007 |      10 | 2025-04-19       | 2025-04-26 | NULL        |
+|             11 |     10002 |      11 | 2025-04-20       | 2025-04-27 | 2025-04-26  |
+|             12 |     10008 |      12 | 2025-04-21       | 2025-04-28 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             14 |     10010 |      14 | 2025-04-23       | 2025-04-30 | 2025-04-29  |
+|             15 |     10000 |      15 | 2025-04-24       | 2025-05-01 | NULL        |
+|             16 |     10011 |      16 | 2025-04-25       | 2025-05-02 | NULL        |
+|             17 |     10012 |      17 | 2025-04-26       | 2025-05-03 | 2025-05-02  |
+|             18 |     10003 |      18 | 2025-04-27       | 2025-05-04 | 2025-05-04  |
+|             19 |     10013 |      19 | 2025-04-28       | 2025-05-05 | NULL        |
+|             20 |     10014 |      20 | 2025-04-29       | 2025-05-06 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
