@@ -1,0 +1,153 @@
+22. Branches with most overdue items
+SELECT c.branch_id, COUNT(*) AS overdue_count FROM Borrow_Transaction bt JOIN Copy c ON bt.copy_id = c.copy_id WHERE bt.return_date IS NULL AND bt.due_date < CURDATE() GROUP BY c.branch_id ORDER BY overdue_count DESC;
++-----------+---------------+
+| branch_id | overdue_count |
++-----------+---------------+
+|         5 |             3 |
+|         2 |             2 |
+|         3 |             2 |
+|         1 |             2 |
+|         4 |             1 |
++-----------+---------------+
+
+26. Overdue transactions
+SELECT * FROM Borrow_Transaction WHERE return_date IS NULL AND due_date < CURDATE();
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+| transaction_id | client_id | copy_id | borrow_date | due_date   | return_date | overdue_fine |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+|             23 |     10002 |       3 | 2025-03-10  | 2025-03-24 | NULL        |        16.20 |
+|             26 |     10004 |       6 | 2025-03-17  | 2025-03-31 | NULL        |        13.40 |
+|             27 |     10001 |       7 | 2025-03-18  | 2025-04-01 | NULL        |        17.85 |
+|             30 |     10007 |      10 | 2025-03-24  | 2025-04-07 | NULL        |        16.00 |
+|             31 |     10002 |      11 | 2025-03-25  | 2025-04-08 | NULL        |        17.25 |
+|             34 |     10010 |      14 | 2025-03-30  | 2025-04-13 | NULL        |        18.45 |
+|             35 |     10000 |      15 | 2025-04-01  | 2025-04-15 | NULL        |        15.00 |
+|             36 |     10011 |      16 | 2025-04-02  | 2025-04-16 | NULL        |        12.90 |
+|             39 |     10013 |      19 | 2025-04-05  | 2025-04-19 | NULL        |        16.55 |
+|             40 |     10014 |      20 | 2025-04-06  | 2025-04-20 | NULL        |        19.80 |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+
+27. Total fines collected in 2025
+SELECT SUM(overdue_fine) AS total_collected FROM Borrow_Transaction WHERE return_date BETWEEN '2025-01-01' AND '2025-12-31';
++-----------------+
+| total_collected |
++-----------------+
+|          147.90 |
++-----------------+
+
+28. Longest borrow durations
+SELECT copy_id, DATEDIFF(IFNULL(return_date, CURDATE()), borrow_date) AS duration FROM Borrow_Transaction ORDER BY duration DESC LIMIT 10;
++---------+----------+
+| copy_id | duration |
++---------+----------+
+|       3 |       55 |
+|       6 |       48 |
+|       7 |       47 |
+|      10 |       41 |
+|      11 |       40 |
+|      14 |       35 |
+|      15 |       33 |
+|      16 |       32 |
+|      19 |       29 |
+|      20 |       28 |
++---------+----------+
+
+29. All current reservations
+SELECT * FROM Reservation WHERE return_date IS NULL;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              4 |     10000 |       4 | 2025-04-13       | 2025-04-20 | NULL        |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|              9 |     10006 |       9 | 2025-04-18       | 2025-04-25 | NULL        |
+|             10 |     10007 |      10 | 2025-04-19       | 2025-04-26 | NULL        |
+|             12 |     10008 |      12 | 2025-04-21       | 2025-04-28 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             15 |     10000 |      15 | 2025-04-24       | 2025-05-01 | NULL        |
+|             16 |     10011 |      16 | 2025-04-25       | 2025-05-02 | NULL        |
+|             19 |     10013 |      19 | 2025-04-28       | 2025-05-05 | NULL        |
+|             20 |     10014 |      20 | 2025-04-29       | 2025-05-06 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
+
+30. Reservations by client
+SELECT * FROM Reservation WHERE client_id = 10001;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              7 |     10001 |       7 | 2025-04-16       | 2025-04-23 | 2025-04-23  |
++----------------+-----------+---------+------------------+------------+-------------+
+
+31. Reserved items now available
+SELECT r.* FROM Reservation r JOIN Copy c ON r.copy_id = c.copy_id WHERE c.status = 'Available' AND r.return_date IS NULL;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              4 |     10000 |       4 | 2025-04-13       | 2025-04-20 | NULL        |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|              9 |     10006 |       9 | 2025-04-18       | 2025-04-25 | NULL        |
+|             10 |     10007 |      10 | 2025-04-19       | 2025-04-26 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             15 |     10000 |      15 | 2025-04-24       | 2025-05-01 | NULL        |
+|             19 |     10013 |      19 | 2025-04-28       | 2025-05-05 | NULL        |
+|             20 |     10014 |      20 | 2025-04-29       | 2025-05-06 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
+
+32. Reservations at a branch
+SELECT r.* FROM Reservation r JOIN Copy c ON r.copy_id = c.copy_id WHERE c.branch_id = 3;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             16 |     10011 |      16 | 2025-04-25       | 2025-05-02 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
+
+33. Most frequent reservers
+SELECT client_id, COUNT(*) AS reservation_count FROM Reservation GROUP BY client_id ORDER BY reservation_count DESC LIMIT 10;
++-----------+-------------------+
+| client_id | reservation_count |
++-----------+-------------------+
+|     10000 |                 3 |
+|     10001 |                 2 |
+|     10002 |                 2 |
+|     10003 |                 2 |
+|     10011 |                 1 |
+|     10012 |                 1 |
+|     10013 |                 1 |
+|     10014 |                 1 |
+|     10004 |                 1 |
+|     10005 |                 1 |
++-----------+-------------------+
+
+34. Fines per client
+SELECT client_id, SUM(overdue_fine) AS total_due FROM Borrow_Transaction WHERE overdue_fine > 0 GROUP BY client_id;
++-----------+-----------+
+| client_id | total_due |
++-----------+-----------+
+|     10000 |     45.80 |
+|     10001 |     32.60 |
+|     10002 |     33.45 |
+|     10003 |     24.20 |
+|     10004 |     13.40 |
+|     10005 |     15.25 |
+|     10006 |     19.60 |
+|     10007 |     16.00 |
+|     10008 |     11.50 |
+|     10009 |     14.10 |
+|     10010 |     18.45 |
+|     10011 |     12.90 |
+|     10012 |     17.70 |
+|     10013 |     16.55 |
+|     10014 |     19.80 |
++-----------+-----------+
+
+36. Total outstanding fines
+SELECT SUM(overdue_fine) AS total_outstanding FROM Borrow_Transaction WHERE return_date IS NULL;
++-------------------+
+| total_outstanding |
++-------------------+
+|            163.40 |
++-------------------+

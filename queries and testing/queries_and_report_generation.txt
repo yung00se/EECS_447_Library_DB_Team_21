@@ -1,0 +1,666 @@
+1. List All Active Clients and Their Contact Info
+SELECT client_id, first_name,last_name, email, phone_number FROM Client WHERE active = TRUE;
++-----------+------------+-----------+-----------------------+--------------+
+| client_id | first_name | last_name | email                 | phone_number |
++-----------+------------+-----------+-----------------------+--------------+
+|     10000 | Alice      | Smith     | alice@example.com     | 555-0101     |
+|     10001 | Bob        | Johnson   | bob.j@example.com     | 555-0102     |
+|     10003 | David      | Brown     | david.b@example.com   | 555-0104     |
+|     10004 | Eve        | Jones     | eve.j@example.com     | 555-0105     |
+|     10006 | Grace      | Miller    | grace.m@example.com   | 555-0107     |
+|     10007 | Henry      | Davis     | henry.d@example.com   | 555-0108     |
+|     10008 | Ivy        | Rodriguez | ivy.r@example.com     | 555-0109     |
+|     10010 | Kate       | Hernandez | kate.h@example.com    | 555-0111     |
+|     10012 | Mia        | Gonzalez  | mia.g@example.com     | 555-0113     |
+|     10013 | Nina       | Wilson    | nina.w@example.com    | 555-0114     |
+|     10014 | Oscar      | Anderson  | oscar.a@example.com   | 555-0115     |
+|     10015 | Paul       | Thomas    | paul.t@example.com    | 555-0116     |
+|     10017 | Rachel     | Moore     | rachel.m@example.com  | 555-0118     |
+|     10018 | Steve      | Jackson   | steve.j@example.com   | 555-0119     |
+|     10019 | Tina       | Martin    | tina.m@example.com    | 555-0120     |
+|     10020 | Uma        | Lee       | uma.l@example.com     | 555-0121     |
+|     10022 | Wendy      | White     | wendy.w@example.com   | 555-0123     |
+|     10023 | Xander     | Harris    | xander.h@example.com  | 555-0124     |
+|     10024 | Yara       | Sanchez   | yara.s@example.com    | 555-0125     |
+|     10026 | Ava        | Ramirez   | ava.r@example.com     | 555-0127     |
+|     10027 | Ben        | Lewis     | ben.l@example.com     | 555-0128     |
+|     10028 | Cora       | Robinson  | cora.r@example.com    | 555-0129     |
+|     10030 | Ella       | Young     | ella.y@example.com    | 555-0131     |
+|     10031 | Finn       | Allen     | finn.a@example.com    | 555-0132     |
+|     10032 | Gina       | King      | gina.k@example.com    | 555-0133     |
+|     10034 | Isla       | Green     | isla.g@example.com    | 555-0135     |
+|     10035 | Jake       | Baker     | jake.b@example.com    | 555-0136     |
+|     10036 | Kara       | Adams     | kara.a@example.com    | 555-0137     |
+|     10038 | Maya       | Carter    | maya.c@example.com    | 555-0139     |
+|     10039 | Nolan      | Mitchell  | nolan.m@example.com   | 555-0140     |
+|     10040 | Olga       | Perez     | olga.p@example.com    | 555-0141     |
+|     10042 | Queenie    | Kelly     | queenie.k@example.com | 555-0143     |
+|     10043 | Ralph      | Cruz      | ralph.c@example.com   | 555-0144     |
+|     10044 | Sophie     | Howard    | sophie.h@example.com  | 555-0145     |
+|     10046 | Ursula     | Gray      | ursula.g@example.com  | 555-0147     |
+|     10047 | Vince      | James     | vince.j@example.com   | 555-0148     |
+|     10048 | Willa      | Watson    | willa.w@example.com   | 555-0149     |
+|     10049 | Xena       | Brooks    | xena.b@example.com    | 555-0150     |
++-----------+------------+-----------+-----------------------+--------------+
+
+
+2. List Client Names Under Each Membership
+SELECT membership, first_name, email FROM Client ORDER BY membership,first_name;
++------------+------------+-----------------------+
+| membership | first_name | email                 |
++------------+------------+-----------------------+
+| Standard   | Alice      | alice@example.com     |
+| Standard   | Ben        | ben.l@example.com     |
+| Standard   | David      | david.b@example.com   |
+| Standard   | Ella       | ella.y@example.com    |
+| Standard   | Grace      | grace.m@example.com   |
+| Standard   | Hank       | hank.s@example.com    |
+| Standard   | Jack       | jack.m@example.com    |
+| Standard   | Kara       | kara.a@example.com    |
+| Standard   | Mia        | mia.g@example.com     |
+| Standard   | Nolan      | nolan.m@example.com   |
+| Standard   | Paul       | paul.t@example.com    |
+| Standard   | Queenie    | queenie.k@example.com |
+| Standard   | Steve      | steve.j@example.com   |
+| Standard   | Tom        | tom.w@example.com     |
+| Standard   | Victor     | victor.p@example.com  |
+| Standard   | Willa      | willa.w@example.com   |
+| Standard   | Yara       | yara.s@example.com    |
+| Student    | Bob        | bob.j@example.com     |
+| Student    | Cora       | cora.r@example.com    |
+| Student    | Eve        | eve.j@example.com     |
+| Student    | Finn       | finn.a@example.com    |
+| Student    | Henry      | henry.d@example.com   |
+| Student    | Isla       | isla.g@example.com    |
+| Student    | Kate       | kate.h@example.com    |
+| Student    | Liam       | liam.n@example.com    |
+| Student    | Nina       | nina.w@example.com    |
+| Student    | Olga       | olga.p@example.com    |
+| Student    | Quinn      | quinn.t@example.com   |
+| Student    | Ralph      | ralph.c@example.com   |
+| Student    | Tina       | tina.m@example.com    |
+| Student    | Ursula     | ursula.g@example.com  |
+| Student    | Wendy      | wendy.w@example.com   |
+| Student    | Xena       | xena.b@example.com    |
+| Student    | Zane       | zane.c@example.com    |
+| Senior     | Ava        | ava.r@example.com     |
+| Senior     | Carol      | carol.w@example.com   |
+| Senior     | Derek      | derek.w@example.com   |
+| Senior     | Frank      | frank.g@example.com   |
+| Senior     | Gina       | gina.k@example.com    |
+| Senior     | Ivy        | ivy.r@example.com     |
+| Senior     | Jake       | jake.b@example.com    |
+| Senior     | Leo        | leo.l@example.com     |
+| Senior     | Maya       | maya.c@example.com    |
+| Senior     | Oscar      | oscar.a@example.com   |
+| Senior     | Peter      | peter.r@example.com   |
+| Senior     | Rachel     | rachel.m@example.com  |
+| Senior     | Sophie     | sophie.h@example.com  |
+| Senior     | Uma        | uma.l@example.com     |
+| Senior     | Vince      | vince.j@example.com   |
+| Senior     | Xander     | xander.h@example.com  |
++------------+------------+-----------------------+
+
+
+3. Count of people in each Membership 
+SELECT membership, COUNT(*) AS total_clients FROM Client GROUP BY membership ORDER BY total_clients DESC;
++------------+---------------+
+| membership | total_clients |
++------------+---------------+
+| Standard   |            17 |
+| Student    |            17 |
+| Senior     |            16 |
++------------+---------------+
+
+
+
+4.Retrieve All Borrowed Books with Client and Due Date Info
+SELECT BT.transaction_id, C.first_name AS client_name, M.title, BT.borrow_date, BT.due_date FROM Borrow_Transaction BT JOIN Client C ON BT.client_id = C.client_id JOIN Copy CP ON BT.copy_id =
+CP.copy_id JOIN Media M ON CP.media_id = M.media_id WHERE BT.return_date IS NULL;
++----------------+-------------+---------------------------------------+-------------+------------+
+| transaction_id | client_name | title                                 | borrow_date | due_date   |
++----------------+-------------+---------------------------------------+-------------+------------+
+|             23 | Carol       | Harry Potter and the Sorcerer's Stone | 2025-03-10  | 2025-03-24 |
+|             26 | Eve         | 1984                                  | 2025-03-17  | 2025-03-31 |
+|             27 | Bob         | The Great Gatsby                      | 2025-03-18  | 2025-04-01 |
+|             30 | Henry       | Pride and Prejudice                   | 2025-03-24  | 2025-04-07 |
+|             31 | Carol       | Pride and Prejudice                   | 2025-03-25  | 2025-04-08 |
+|             34 | Kate        | The Catcher in the Rye                | 2025-03-30  | 2025-04-13 |
+|             35 | Alice       | The Catcher in the Rye                | 2025-04-01  | 2025-04-15 |
+|             36 | Leo         | The Catcher in the Rye                | 2025-04-02  | 2025-04-16 |
+|             39 | Nina        | Fahrenheit 451                        | 2025-04-05  | 2025-04-19 |
+|             40 | Oscar       | Moby Dick                             | 2025-04-06  | 2025-04-20 |
++----------------+-------------+---------------------------------------+-------------+------------+
+
+
+
+5. List all books
+SELECT m.media_id, m.title, b.author, m.genre, m.publication_date FROM Media m JOIN Book b ON m.media_id = b.book_id;
++----------+---------------------------------------+---------------------+------------+------------------+
+| media_id | title                                 | author              | genre      | publication_date |
++----------+---------------------------------------+---------------------+------------+------------------+
+|     1094 | The Alchemist                         | Paulo Coelho        | Adventure  | 1988-05-25       |
+|     1095 | Harry Potter and the Sorcerer's Stone | J.K. Rowling        | Fantasy    | 1997-06-26       |
+|     1096 | 1984                                  | George Orwell       | Dystopian  | 1949-06-08       |
+|     1097 | The Great Gatsby                      | F. Scott Fitzgerald | Classic    | 1925-04-10       |
+|     1098 | Pride and Prejudice                   | Jane Austen         | Romance    | 1925-04-11       |
+|     1099 | The Hobbit                            | J.R.R. Tolkien      | Fantasy    | 1937-09-21       |
+|     1100 | The Catcher in the Rye                | J.D. Salinger       | Classic    | 1951-07-16       |
+|     1101 | The Odyssey                           | Homer               | Classic    | 1927-04-10       |
+|     1102 | Fahrenheit 451                        | Ray Bradbury        | Dystopian  | 1953-10-19       |
+|     1103 | Moby Dick                             | Herman Melville     | Adventure  | 1851-10-18       |
+|     1104 | The Scarlet Letter                    | Mark Twain          | Classic    | 1850-03-16       |
+|     1105 | The Matrix Unfolded                   | Leo Tolstoy         | Film       | 2021-12-10       |
+|     1106 | The Social Network                    | Charles Dickens     | Film       | 2010-10-01       |
+|     1107 | Digital Transformation in Business    | Victor Hugo         | Business   | 2023-05-01       |
+|     1108 | The Future of Work                    | Harper Lee          | Business   | 2023-11-01       |
+|     1109 | Deep Learning                         | William Shakespeare | Science    | 2022-06-14       |
+|     1110 | Cybersecurity in the Modern Age       | Emily Brontë        | Technology | 2021-11-15       |
+|     1111 | Blockchain Revolution                 | Friedrich Nietzsche | Business   | 2023-08-20       |
+|     1112 | Business Weekly                       | Isaac Asimov        | Business   | 2024-03-30       |
+|     1113 | How AI Will Change the World          | C.S. Lewis          | Technology | 2023-09-22       |
+|     1114 | The Social Network                    | Jules Verne         | Film       | 2010-10-01       |
+|     1115 | The Hobbit                            | Kurt Vonnegut       | Fantasy    | 1937-09-21       |
+|     1116 | Scientific American                   | Franz Kafka         | Science    | 2024-04-05       |
+|     1117 | Vogue                                 | Aldous Huxley       | Fashion    | 2024-03-15       |
+|     1118 | Time Magazine                         | Arthur C. Clarke    | News       | 2024-01-15       |
+|     1119 | The Economist                         | Margaret Atwood     | Economy    | 2024-04-10       |
+|     1120 | Wired                                 | Gillian Flynn       | Tech       | 2024-01-20       |
+|     1121 | National Geographic                   | George R. R. Martin | Nature     | 2024-02-01       |
+|     1122 | Rolling Stone                         | Stephen King        | Music      | 2024-02-25       |
+|     1123 | Pride and Prejudice                   | Dan Brown           | Romance    | 1813-01-28       |
++----------+---------------------------------------+---------------------+------------+------------------+
+
+
+6. List all magazines
+SELECT m.media_id, m.title, mag.issue_no, m.genre, m.publication_date FROM Media m JOIN Magazine mag ON m.media_id = mag.magazine_id;
++----------+-------------------------+----------+------------+------------------+
+| media_id | title                   | issue_no | genre      | publication_date |
++----------+-------------------------+----------+------------+------------------+
+|     1124 | Vogue                   | 45       | Fashion    | 2024-03-15       |
+|     1125 | Forbes                  | 46       | Business   | 2024-03-05       |
+|     1126 | TIME Health             | 47       | Health     | 2024-01-10       |
+|     1127 | Scientific American     | 48       | Science    | 2024-04-05       |
+|     1128 | Business Weekly         | 49       | Business   | 2024-03-30       |
+|     1129 | Vogue                   | 50       | Fashion    | 2024-03-15       |
+|     1130 | TIME Magazine           | 51       | News       | 2024-01-15       |
+|     1131 | The Economist           | 52       | Economy    | 2024-04-10       |
+|     1132 | Wired                   | 53       | Tech       | 2024-01-20       |
+|     1133 | National Geographic     | 54       | Nature     | 2024-02-01       |
+|     1134 | Rolling Stone           | 55       | Music      | 2024-02-25       |
+|     1135 | Harvard Business Review | 56       | Business   | 2024-04-10       |
+|     1136 | The New Yorker          | 57       | Culture    | 2024-01-25       |
+|     1137 | TIME                    | 58       | News       | 2024-04-15       |
+|     1138 | Elle                    | 59       | Fashion    | 2024-03-12       |
+|     1139 | The Guardian            | 60       | News       | 2024-04-20       |
+|     1140 | Popular Science         | 61       | Science    | 2024-02-01       |
+|     1141 | MIT Technology Review   | 62       | Technology | 2024-04-10       |
+|     1142 | USA Today               | 63       | News       | 2024-04-02       |
+|     1143 | Scientific American     | 64       | Science    | 2024-04-05       |
++----------+-------------------------+----------+------------+------------------+
+
+
+7. Report of Overdue Transactions
+SELECT C.first_name AS client_name, M.title, BT.due_date, BT.return_date, FROM Borrow_Transaction BT JOIN Client C ON BT.client_id = C.client_id JOIN Copy CP ON BT.copy_id = CP
+.copy_id JOIN Media M ON CP.media_id = M.media_id WHERE BT.return_date > BT.due_date;
++-------------+---------------------------------------+------------+-------------+
+| client_name | title                                 | due_date   | return_date |
++-------------+---------------------------------------+------------+-------------+
+| Bob         | The Alchemist                         | 2025-03-19 | 2025-03-25  |     
+| Alice       | Harry Potter and the Sorcerer's Stone | 2025-03-26 | 2025-03-27  |    
+| Grace       | Pride and Prejudice                   | 2025-04-05 | 2025-04-06  |        
+| Mia         | The Odyssey                           | 2025-04-17 | 2025-04-20  |        
++-------------+---------------------------------------+------------+-------------+
+
+
+8. List of Current Reservations by Client
+SELECT R.reservation_id, C.first_name AS client_name, M.title, R.reservation_date FROM Reservation R JOIN Client C ON R.client_id = C.client_id JOIN Copy CP ON R.copy_id = CP.copy_id JOIN Medi
+a M ON CP.media_id = M.media_id;
++----------------+-------------+---------------------------------------+------------------+
+| reservation_id | client_name | title                                 | reservation_date |
++----------------+-------------+---------------------------------------+------------------+
+|              1 | Alice       | The Alchemist                         | 2025-04-10       |
+|              2 | Bob         | The Alchemist                         | 2025-04-11       |
+|              3 | Carol       | Harry Potter and the Sorcerer's Stone | 2025-04-12       |
+|              4 | Alice       | Harry Potter and the Sorcerer's Stone | 2025-04-13       |
+|              5 | David       | Harry Potter and the Sorcerer's Stone | 2025-04-14       |
+|              6 | Eve         | 1984                                  | 2025-04-15       |
+|              7 | Bob         | The Great Gatsby                      | 2025-04-16       |
+|              8 | Frank       | The Great Gatsby                      | 2025-04-17       |
+|              9 | Grace       | Pride and Prejudice                   | 2025-04-18       |
+|             10 | Henry       | Pride and Prejudice                   | 2025-04-19       |
+|             11 | Carol       | Pride and Prejudice                   | 2025-04-20       |
+|             12 | Ivy         | The Hobbit                            | 2025-04-21       |
+|             13 | Jack        | The Hobbit                            | 2025-04-22       |
+|             14 | Kate        | The Catcher in the Rye                | 2025-04-23       |
+|             15 | Alice       | The Catcher in the Rye                | 2025-04-24       |
+|             16 | Leo         | The Catcher in the Rye                | 2025-04-25       |
+|             17 | Mia         | The Odyssey                           | 2025-04-26       |
+|             18 | David       | The Odyssey                           | 2025-04-27       |
+|             19 | Nina        | Fahrenheit 451                        | 2025-04-28       |
+|             20 | Oscar       | Moby Dick                             | 2025-04-29       |
++----------------+-------------+---------------------------------------+------------------+
+
+
+9. List of Staff and Their Assigned Branch
+SELECT LS.staff_id, LS.first_name AS staff_name, B.name AS branch_name FROM Staff LS JOIN Branch B ON LS.branch_id = B.branch_id WHERE LS.currently_employed = TRUE;
++----------+------------+-------------------+
+| staff_id | staff_name | branch_name       |
++----------+------------+-------------------+
+|       10 | Alicia     | Downtown Library  |
+|       15 | Franklin   | Downtown Library  |
+|       20 | Kaitlyn    | Downtown Library  |
+|       25 | Patrick    | Downtown Library  |
+|       16 | Gabriella  | Westside Branch   |
+|       21 | Logan      | Westside Branch   |
+|       26 | Quinn      | Westside Branch   |
+|       12 | Chloe      | Eastside Branch   |
+|       13 | Derek      | Northside Library |
+|       18 | Isabelle   | Northside Library |
+|       23 | Nathan     | Northside Library |
+|       28 | Samuel     | Northside Library |
+|       19 | Jackson    | Southside Branch  |
+|       24 | Olivia     | Southside Branch  |
+|       29 | Tiffany    | Southside Branch  |
++----------+------------+-------------------+
+
+
+
+10. Most Frequently Borrowed Media
+SELECT M.title, COUNT(*) AS borrow_count FROM Borrow_Transaction BT JOIN Copy CP ON BT.copy_id = CP.copy_id JOIN Media M ON CP.media_id = M.media_id GROUP BY M.title ORDER BY borrow_count DESC LIMIT 10;
++---------------------------------------+--------------+
+| title                                 | borrow_count |
++---------------------------------------+--------------+
+| Harry Potter and the Sorcerer's Stone |            3 |
+| Pride and Prejudice                   |            3 |
+| The Catcher in the Rye                |            3 |
+| The Alchemist                         |            2 |
+| The Great Gatsby                      |            2 |
+| The Hobbit                            |            2 |
+| The Odyssey                           |            2 |
+| 1984                                  |            1 |
+| Fahrenheit 451                        |            1 |
+| Moby Dick                             |            1 |
++---------------------------------------+--------------+
+
+
+11. Media by genre (e.g Science)
+SELECT media_id, title, genre, publication_date FROM Media WHERE genre = 'Science';
++----------+---------------------+---------+------------------+
+| media_id | title               | genre   | publication_date |
++----------+---------------------+---------+------------------+
+|     1109 | Deep Learning       | Science | 2022-06-14       |
+|     1116 | Scientific American | Science | 2024-04-05       |
+|     1127 | Scientific American | Science | 2024-04-05       |
+|     1140 | Popular Science     | Science | 2024-02-01       |
+|     1143 | Scientific American | Science | 2024-04-05       |
+|     1149 | Deep Learning       | Science | 2022-06-14       |
++----------+---------------------+---------+------------------+
+
+12. Borrowing History for a Specific Client
+SELECT M.title, BT.borrow_date, BT.return_date FROM Borrow_Transaction BT JOIN Copy CP ON BT.copy_id = CP.copy_id JOIN Media M ON CP.media_id = M.media_id WHERE BT.client_id =
+ 10012 ORDER BY BT.borrow_date DESC;
++-------------+-------------+-------------+
+| title       | borrow_date | return_date |
++-------------+-------------+-------------+
+| The Odyssey | 2025-04-03  | 2025-04-20  |        
++-------------+-------------+-------------+
+
+
+13. Find books by a specific author (Book)
+SELECT m.media_id, m.title, b.author, m.genre, m.publication_date FROM Media m JOIN Book b ON m.media_id = b.book_id WHERE b.author = 'Isaac Asimov';
++----------+-----------------+--------------+----------+------------------+
+| media_id | title           | author       | genre    | publication_date |
++----------+-----------------+--------------+----------+------------------+
+|     1112 | Business Weekly | Isaac Asimov | Business | 2024-03-30       |
++----------+-----------------+--------------+----------+------------------+
+
+
+14. Search media by title keyword
+SELECT media_id, title, genre, publication_date FROM Media WHERE title LIKE '%Harry%';
++----------+---------------------------------------+---------+------------------+
+| media_id | title                                 | genre   | publication_date |
++----------+---------------------------------------+---------+------------------+
+|     1095 | Harry Potter and the Sorcerer's Stone | Fantasy | 1997-06-26       |
++----------+---------------------------------------+---------+------------------+
+
+
+15.  Media published before/after year
+SELECT media_id, title, genre, publication_date FROM Media WHERE publication_date > 2020;
++----------+---------------------------------------+------------+------------------+
+| media_id | title                                 | genre      | publication_date |
++----------+---------------------------------------+------------+------------------+
+|     1094 | The Alchemist                         | Adventure  | 1988-05-25       |
+|     1095 | Harry Potter and the Sorcerer's Stone | Fantasy    | 1997-06-26       |
+|     1096 | 1984                                  | Dystopian  | 1949-06-08       |
+|     1097 | The Great Gatsby                      | Classic    | 1925-04-10       |
+|     1098 | Pride and Prejudice                   | Romance    | 1925-04-11       |
+|     1099 | The Hobbit                            | Fantasy    | 1937-09-21       |
+|     1100 | The Catcher in the Rye                | Classic    | 1951-07-16       |
+|     1101 | The Odyssey                           | Classic    | 1927-04-10       |
+|     1102 | Fahrenheit 451                        | Dystopian  | 1953-10-19       |
+|     1103 | Moby Dick                             | Adventure  | 1851-10-18       |
+|     1104 | The Scarlet Letter                    | Classic    | 1850-03-16       |
+|     1105 | The Matrix Unfolded                   | Film       | 2021-12-10       |
+|     1106 | The Social Network                    | Film       | 2010-10-01       |
+|     1107 | Digital Transformation in Business    | Business   | 2023-05-01       |
+|     1108 | The Future of Work                    | Business   | 2023-11-01       |
+|     1109 | Deep Learning                         | Science    | 2022-06-14       |
+|     1110 | Cybersecurity in the Modern Age       | Technology | 2021-11-15       |
+|     1111 | Blockchain Revolution                 | Business   | 2023-08-20       |
+|     1112 | Business Weekly                       | Business   | 2024-03-30       |
+|     1113 | How AI Will Change the World          | Technology | 2023-09-22       |
+|     1114 | The Social Network                    | Film       | 2010-10-01       |
+|     1115 | The Hobbit                            | Fantasy    | 1937-09-21       |
+|     1116 | Scientific American                   | Science    | 2024-04-05       |
+|     1117 | Vogue                                 | Fashion    | 2024-03-15       |
+|     1118 | Time Magazine                         | News       | 2024-01-15       |
+|     1119 | The Economist                         | Economy    | 2024-04-10       |
+|     1120 | Wired                                 | Tech       | 2024-01-20       |
+|     1121 | National Geographic                   | Nature     | 2024-02-01       |
+|     1122 | Rolling Stone                         | Music      | 2024-02-25       |
+|     1123 | Pride and Prejudice                   | Romance    | 1813-01-28       |
+|     1124 | Vogue                                 | Fashion    | 2024-03-15       |
+|     1125 | Forbes                                | Business   | 2024-03-05       |
+|     1126 | TIME Health                           | Health     | 2024-01-10       |
+|     1127 | Scientific American                   | Science    | 2024-04-05       |
+|     1128 | Business Weekly                       | Business   | 2024-03-30       |
+|     1129 | Vogue                                 | Fashion    | 2024-03-15       |
+|     1130 | TIME Magazine                         | News       | 2024-01-15       |
+|     1131 | The Economist                         | Economy    | 2024-04-10       |
+|     1132 | Wired                                 | Tech       | 2024-01-20       |
+|     1133 | National Geographic                   | Nature     | 2024-02-01       |
+|     1134 | Rolling Stone                         | Music      | 2024-02-25       |
+|     1135 | Harvard Business Review               | Business   | 2024-04-10       |
+|     1136 | The New Yorker                        | Culture    | 2024-01-25       |
+|     1137 | TIME                                  | News       | 2024-04-15       |
+|     1138 | Elle                                  | Fashion    | 2024-03-12       |
+|     1139 | The Guardian                          | News       | 2024-04-20       |
+|     1140 | Popular Science                       | Science    | 2024-02-01       |
+|     1141 | MIT Technology Review                 | Technology | 2024-04-10       |
+|     1142 | USA Today                             | News       | 2024-04-02       |
+|     1143 | Scientific American                   | Science    | 2024-04-05       |
+|     1144 | The Social Network                    | Technology | 2020-01-10       |
+|     1145 | VR Explained                          | Technology | 2023-10-15       |
+|     1146 | The Future of AI                      | Technology | 2023-05-01       |
+|     1147 | Digital Transformation                | Business   | 2022-02-15       |
+|     1148 | Tech Innovations                      | Technology | 2025-04-01       |
+|     1149 | Deep Learning                         | Science    | 2022-06-14       |
+|     1150 | Cybersecurity                         | Technology | 2021-11-15       |
+|     1151 | How AI Will Change the World          | Technology | 2023-09-22       |
+|     1152 | Time for Business                     | Business   | 2024-04-02       |
+|     1153 | The Digital Age                       | Technology | 2023-08-01       |
+|     1154 | Future of Work                        | Business   | 2024-01-15       |
+|     1155 | Technology Reimagined                 | Business   | 2023-05-01       |
+|     1156 | Music Innovations                     | Music      | 2022-04-10       |
+|     1157 | Future of AI                          | Technology | 2023-07-20       |
+|     1158 | Big Data Revolution                   | Technology | 2023-12-05       |
++----------+---------------------------------------+------------+------------------+
+
+
+16. Clients with overdue books
+SELECT c.client_id, c.first_name, c.last_name, bt.copy_id, bt.due_date FROM Borrow_Transaction bt JOIN Client c ON bt.client_id = c.client_id WHERE bt.return_date IS NULL AND bt.due_date < CUR
+DATE();
++-----------+------------+-----------+---------+------------+
+| client_id | first_name | last_name | copy_id | due_date   |
++-----------+------------+-----------+---------+------------+
+|     10002 | Carol      | Williams  |       3 | 2025-03-24 |
+|     10004 | Eve        | Jones     |       6 | 2025-03-31 |
+|     10001 | Bob        | Johnson   |       7 | 2025-04-01 |
+|     10007 | Henry      | Davis     |      10 | 2025-04-07 |
+|     10002 | Carol      | Williams  |      11 | 2025-04-08 |
+|     10010 | Kate       | Hernandez |      14 | 2025-04-13 |
+|     10000 | Alice      | Smith     |      15 | 2025-04-15 |
+|     10011 | Leo        | Lopez     |      16 | 2025-04-16 |
+|     10013 | Nina       | Wilson    |      19 | 2025-04-19 |
+|     10014 | Oscar      | Anderson  |      20 | 2025-04-20 |
++-----------+------------+-----------+---------+------------+
+
+
+17. Client transaction history
+SELECT * FROM Borrow_Transaction WHERE client_id = 10013;
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+| transaction_id | client_id | copy_id | borrow_date | due_date   | return_date | overdue_fine |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+|             39 |     10013 |      19 | 2025-04-05  | 2025-04-19 | NULL        |        16.55 |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+1 row in set (0.000 sec)
+
+18. List all staff
+SELECT * FROM Staff;
++----------+------------+-----------+--------------------+-----------+
+| staff_id | first_name | last_name | currently_employed | branch_id |
++----------+------------+-----------+--------------------+-----------+
+|       10 | Alicia     | Moore     |                  1 |         1 |
+|       11 | Brandon    | Young     |                  0 |         2 |
+|       12 | Chloe      | Mitchell  |                  1 |         3 |
+|       13 | Derek      | Carter    |                  1 |         4 |
+|       14 | Emily      | Perez     |                  0 |         5 |
+|       15 | Franklin   | Watson    |                  1 |         1 |
+|       16 | Gabriella  | Hughes    |                  1 |         2 |
+|       17 | Harrison   | Flores    |                  0 |         3 |
+|       18 | Isabelle   | Sanders   |                  1 |         4 |
+|       19 | Jackson    | Reed      |                  1 |         5 |
+|       20 | Kaitlyn    | Kelly     |                  1 |         1 |
+|       21 | Logan      | Patterson |                  1 |         2 |
+|       22 | Madeline   | Barnes    |                  0 |         3 |
+|       23 | Nathan     | Bryant    |                  1 |         4 |
+|       24 | Olivia     | Russell   |                  1 |         5 |
+|       25 | Patrick    | Griffin   |                  1 |         1 |
+|       26 | Quinn      | West      |                  1 |         2 |
+|       27 | Rachel     | Chapman   |                  0 |         3 |
+|       28 | Samuel     | Vasquez   |                  1 |         4 |
+|       29 | Tiffany    | Wells     |                  1 |         5 |
++----------+------------+-----------+--------------------+-----------+
+
+
+19. Media count per branch
+SELECT branch_id, COUNT(*) AS total_items FROM Copy GROUP BY branch_id;
++-----------+-------------+
+| branch_id | total_items |
++-----------+-------------+
+|         1 |           7 |
+|         2 |           5 |
+|         3 |           8 |
+|         4 |           7 |
+|         5 |           8 |
++-----------+-------------+
+
+
+20. Copies of a media item
+SELECT * FROM Copy WHERE media_id = 1098;
++---------+----------+-----------+-----------+
+| copy_id | media_id | branch_id | status    |
++---------+----------+-----------+-----------+
+|       9 |     1098 |         1 | Available |
+|      10 |     1098 |         4 | Available |
+|      11 |     1098 |         5 | Available |
++---------+----------+-----------+-----------+
+
+
+21 Report on Branches with most overdue items
+SELECT c.branch_id, COUNT(*) AS overdue_count FROM Borrow_Transaction bt JOIN Copy c ON bt.copy_id = c.copy_id WHERE bt.return_date IS NULL AND bt.due_date < CURDATE()GROUP BY c.branch_id ORDE
+R BY overdue_count DESC;
++-----------+---------------+
+| branch_id | overdue_count |
++-----------+---------------+
+|         5 |             3 |
+|         2 |             2 |
+|         3 |             2 |
+|         1 |             2 |
+|         4 |             1 |
++-----------+---------------+
+
+
+22. All current borrow transactions
+MariaDB [447s25_j290m472]> SELECT * FROM Borrow_Transaction WHERE return_date IS NULL;
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+| transaction_id | client_id | copy_id | borrow_date | due_date   | return_date | overdue_fine |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+|             23 |     10002 |       3 | 2025-03-10  | 2025-03-24 | NULL        |        16.20 |
+|             26 |     10004 |       6 | 2025-03-17  | 2025-03-31 | NULL        |        13.40 |
+|             27 |     10001 |       7 | 2025-03-18  | 2025-04-01 | NULL        |        17.85 |
+|             30 |     10007 |      10 | 2025-03-24  | 2025-04-07 | NULL        |        16.00 |
+|             31 |     10002 |      11 | 2025-03-25  | 2025-04-08 | NULL        |        17.25 |
+|             34 |     10010 |      14 | 2025-03-30  | 2025-04-13 | NULL        |        18.45 |
+|             35 |     10000 |      15 | 2025-04-01  | 2025-04-15 | NULL        |        15.00 |
+|             36 |     10011 |      16 | 2025-04-02  | 2025-04-16 | NULL        |        12.90 |
+|             39 |     10013 |      19 | 2025-04-05  | 2025-04-19 | NULL        |        16.55 |
+|             40 |     10014 |      20 | 2025-04-06  | 2025-04-20 | NULL        |        19.80 |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+
+
+23. Branches with most overdue items
+SELECT c.branch_id, COUNT(*) AS overdue_count FROM Borrow_Transaction bt JOIN Copy c ON bt.copy_id = c.copy_id WHERE bt.return_date IS NULL AND bt.due_date < CURDATE() GROUP BY c.branch_id ORDER BY overdue_count DESC;
++-----------+---------------+
+| branch_id | overdue_count |
++-----------+---------------+
+|         5 |             3 |
+|         2 |             2 |
+|         3 |             2 |
+|         1 |             2 |
+|         4 |             1 |
++-----------+---------------+
+
+24. Overdue transactions
+SELECT * FROM Borrow_Transaction WHERE return_date IS NULL AND due_date < CURDATE();
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+| transaction_id | client_id | copy_id | borrow_date | due_date   | return_date | overdue_fine |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+|             23 |     10002 |       3 | 2025-03-10  | 2025-03-24 | NULL        |        16.20 |
+|             26 |     10004 |       6 | 2025-03-17  | 2025-03-31 | NULL        |        13.40 |
+|             27 |     10001 |       7 | 2025-03-18  | 2025-04-01 | NULL        |        17.85 |
+|             30 |     10007 |      10 | 2025-03-24  | 2025-04-07 | NULL        |        16.00 |
+|             31 |     10002 |      11 | 2025-03-25  | 2025-04-08 | NULL        |        17.25 |
+|             34 |     10010 |      14 | 2025-03-30  | 2025-04-13 | NULL        |        18.45 |
+|             35 |     10000 |      15 | 2025-04-01  | 2025-04-15 | NULL        |        15.00 |
+|             36 |     10011 |      16 | 2025-04-02  | 2025-04-16 | NULL        |        12.90 |
+|             39 |     10013 |      19 | 2025-04-05  | 2025-04-19 | NULL        |        16.55 |
+|             40 |     10014 |      20 | 2025-04-06  | 2025-04-20 | NULL        |        19.80 |
++----------------+-----------+---------+-------------+------------+-------------+--------------+
+
+25. Total fines collected in 2025
+SELECT SUM(overdue_fine) AS total_collected FROM Borrow_Transaction WHERE return_date BETWEEN '2025-01-01' AND '2025-12-31';
++-----------------+
+| total_collected |
++-----------------+
+|          147.90 |
++-----------------+
+
+26. Longest borrow durations
+SELECT copy_id, DATEDIFF(IFNULL(return_date, CURDATE()), borrow_date) AS duration FROM Borrow_Transaction ORDER BY duration DESC LIMIT 10;
++---------+----------+
+| copy_id | duration |
++---------+----------+
+|       3 |       55 |
+|       6 |       48 |
+|       7 |       47 |
+|      10 |       41 |
+|      11 |       40 |
+|      14 |       35 |
+|      15 |       33 |
+|      16 |       32 |
+|      19 |       29 |
+|      20 |       28 |
++---------+----------+
+
+27. All current reservations
+SELECT * FROM Reservation WHERE return_date IS NULL;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              4 |     10000 |       4 | 2025-04-13       | 2025-04-20 | NULL        |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|              9 |     10006 |       9 | 2025-04-18       | 2025-04-25 | NULL        |
+|             10 |     10007 |      10 | 2025-04-19       | 2025-04-26 | NULL        |
+|             12 |     10008 |      12 | 2025-04-21       | 2025-04-28 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             15 |     10000 |      15 | 2025-04-24       | 2025-05-01 | NULL        |
+|             16 |     10011 |      16 | 2025-04-25       | 2025-05-02 | NULL        |
+|             19 |     10013 |      19 | 2025-04-28       | 2025-05-05 | NULL        |
+|             20 |     10014 |      20 | 2025-04-29       | 2025-05-06 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
+
+28. Reservations by client
+SELECT * FROM Reservation WHERE client_id = 10001;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              7 |     10001 |       7 | 2025-04-16       | 2025-04-23 | 2025-04-23  |
++----------------+-----------+---------+------------------+------------+-------------+
+
+29. Reserved items now available
+SELECT r.* FROM Reservation r JOIN Copy c ON r.copy_id = c.copy_id WHERE c.status = 'Available' AND r.return_date IS NULL;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              4 |     10000 |       4 | 2025-04-13       | 2025-04-20 | NULL        |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|              9 |     10006 |       9 | 2025-04-18       | 2025-04-25 | NULL        |
+|             10 |     10007 |      10 | 2025-04-19       | 2025-04-26 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             15 |     10000 |      15 | 2025-04-24       | 2025-05-01 | NULL        |
+|             19 |     10013 |      19 | 2025-04-28       | 2025-05-05 | NULL        |
+|             20 |     10014 |      20 | 2025-04-29       | 2025-05-06 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
+
+30. Reservations at a branch
+SELECT r.* FROM Reservation r JOIN Copy c ON r.copy_id = c.copy_id WHERE c.branch_id = 3;
++----------------+-----------+---------+------------------+------------+-------------+
+| reservation_id | client_id | copy_id | reservation_date | due_date   | return_date |
++----------------+-----------+---------+------------------+------------+-------------+
+|              2 |     10001 |       2 | 2025-04-11       | 2025-04-18 | NULL        |
+|              6 |     10004 |       6 | 2025-04-15       | 2025-04-22 | NULL        |
+|             13 |     10009 |      13 | 2025-04-22       | 2025-04-29 | NULL        |
+|             16 |     10011 |      16 | 2025-04-25       | 2025-05-02 | NULL        |
++----------------+-----------+---------+------------------+------------+-------------+
+
+31. Most frequent reservers
+SELECT client_id, COUNT(*) AS reservation_count FROM Reservation GROUP BY client_id ORDER BY reservation_count DESC LIMIT 10;
++-----------+-------------------+
+| client_id | reservation_count |
++-----------+-------------------+
+|     10000 |                 3 |
+|     10001 |                 2 |
+|     10002 |                 2 |
+|     10003 |                 2 |
+|     10011 |                 1 |
+|     10012 |                 1 |
+|     10013 |                 1 |
+|     10014 |                 1 |
+|     10004 |                 1 |
+|     10005 |                 1 |
++-----------+-------------------+
+
+32. Fines per client
+SELECT client_id, SUM(overdue_fine) AS total_due FROM Borrow_Transaction WHERE overdue_fine > 0 GROUP BY client_id;
++-----------+-----------+
+| client_id | total_due |
++-----------+-----------+
+|     10000 |     45.80 |
+|     10001 |     32.60 |
+|     10002 |     33.45 |
+|     10003 |     24.20 |
+|     10004 |     13.40 |
+|     10005 |     15.25 |
+|     10006 |     19.60 |
+|     10007 |     16.00 |
+|     10008 |     11.50 |
+|     10009 |     14.10 |
+|     10010 |     18.45 |
+|     10011 |     12.90 |
+|     10012 |     17.70 |
+|     10013 |     16.55 |
+|     10014 |     19.80 |
++-----------+-----------+
+
+33. Total outstanding fines
+SELECT SUM(overdue_fine) AS total_outstanding FROM Borrow_Transaction WHERE return_date IS NULL;
++-------------------+
+| total_outstanding |
++-------------------+
+|            163.40 |
++-------------------+
+
